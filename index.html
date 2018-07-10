@@ -164,8 +164,7 @@
         }
         function loadActiveSample() {
             d3.text("samples/" + active_sample.sample + "/" + active_sample.filepath).then(function(text_raw_next) {
-                console.log(text_raw_next);
-                console.log("loaded");
+                location.hash = active_sample.sample + "/" + active_sample.filepath;
                 change_text_raw(text_raw_next);
             });
         }
@@ -173,6 +172,14 @@
             console.log(data);
             showSamplesSelector(data);
             showFileSelector(data);
+            var hashValue = location.hash;
+            hashValue = hashValue.replace(/^#/, '');
+            var splitId = hashValue.indexOf("/");
+            if (splitId > 1) {
+                active_sample.sample = hashValue.substr(0, splitId);
+                active_sample.filepath = hashValue.substr(splitId + 1);
+                loadActiveSample();
+            }
         });
         console.log("start loading");
     </script>
