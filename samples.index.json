@@ -1,4 +1,0 @@
-[
-    {"folder": "hello_00", "files": ["build.sh", "Cargo.toml", "src/main.rs"]},
-    {"folder": "hello_01", "files": ["build.sh", "Cargo.toml", "src/main.rs"]}
-]

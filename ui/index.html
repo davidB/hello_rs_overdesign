@@ -9,13 +9,21 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="css/material.blue_grey-orange.min.css">
     <script defer src="css/material.min.js"></script>
-   
+
     <!-- see https://vega.github.io/vega/usage/ -->
     <!-- <script src="https://cdn.jsdelivr.net/npm/vega@4.0.0"></script> -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/d3@5.5.0"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega@4.0.0/build/vega-core.min.js"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/d3@5.5.0"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vega@4.0.0-rc.3"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vega-lite@2.6.0"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vega-embed@3.16.0"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vega@3"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/vega-lite@2"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/vega-embed@3"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vega@4.0.0/build/vega-core.min.js"></script> -->
     <script src="js/d3-5.5.0.min.js"></script>
-    <!-- <script src="js/vega-core-4.0.0.min.js"></script> -->
+    <script src="js/vega-4.0.0.min.js"></script>
+    <script src="js/vega-lite-2.6.0.min.js"></script>
+    <script src="js/vega-embed-3.16.0.min.js"></script>
 
     <!--script src="https://raw.githubusercontent.com/google/diff-match-patch/master/javascript/diff_match_patch.js"></script-->
     <script src="js/diff_match_patch.min.js"></script>
@@ -66,14 +74,15 @@
         <main class="mdl-layout__content">
           <!-- <div class="page-content"> -->
                         <div class="mdl-grid">
-                <div id="text" class="mdl-cell mdl-cell--12-col"></div>            
+                                <div id="fileselector" class="mdl-cell mdl-cell--12-col"></div>
+                                <div id="text" class="mdl-cell mdl-cell--12-col"></div>
                 </div>
 
           </div>
         </main>
       </div>
     <h1></h1>
-    <script>
+    <script type="text/javascript">
         var active_sample = {
             sample: "",
             filepath: "src/main.rs",
@@ -144,7 +153,7 @@
         }
         function showFileSelector(data_all) {
             var data = Array.from(data_all.reduce(function(acc, v) {
-                 for (i of v.files) {acc.add(i)}; 
+                 for (i of v.files) {acc.add(i)};
                  return acc
             }, new Set()));
             console.log("files", data);
@@ -183,7 +192,14 @@
         });
         console.log("start loading");
     </script>
-    <script>
-    </script>
+    <script type="text/javascript">
+        var spec = "samples-selector.vg.json";
+        // More argument info at https://github.com/vega/vega-embed
+        vegaEmbed('#fileselector', spec).then(function(result) {
+          // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+          window.vega_result = result;
+          console.log(window.vega_result);
+        }).catch(console.error);
+      </script>
 </body>
 </html>

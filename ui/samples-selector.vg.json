@@ -1,0 +1,18 @@
+{
+  "data": {"url": "files.csv"},
+  "selection": {
+    "pts": {"type": "single", "on": "click"}
+  },
+  "mark": "rect",
+  "encoding": {
+    "y": {"field": "filepath", "type": "ordinal"},
+    "x": {"field": "sample", "type": "ordinal", "axis": null},
+    "color": {
+      "condition": {
+        "selection": "pts",
+        "value": "blue"
+      },
+      "value": "lightblue"
+    }
+  }
+}

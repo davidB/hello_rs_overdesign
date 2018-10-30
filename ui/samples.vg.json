@@ -1,0 +1,172 @@
+{
+    "$schema": "https://vega.github.io/schema/vega/v4.json",
+    "width": 400,
+    "height": 200,
+    "padding": 5,
+    "data": [
+        {
+            "name": "samples",
+            "values": [
+                {
+                    "sample": "hello_00",
+                    "filepath": "build.sh"
+                },
+                {
+                    "sample": "hello_00",
+                    "filepath": "src/main.rs"
+                },
+                {
+                    "sample": "hello_00",
+                    "filepath": "Cargo.toml"
+                },
+                {
+                    "sample": "hello_01",
+                    "filepath": "build.sh"
+                },
+                {
+                    "sample": "hello_01",
+                    "filepath": "src/main.rs"
+                },
+                {
+                    "sample": "hello_01",
+                    "filepath": "Cargo.toml"
+                }
+            ]
+        },
+        {
+            "name": "diff",
+            "values": [
+                {
+                    "0": -1,
+                    "1": "hello"
+                },
+                {
+                    "0": 1,
+                    "1": "fn main() {\n    println!(\"Hello, world!\");\n}\n"
+                }
+            ]
+        }
+    ],
+    "signals": [
+        {
+            "name": "tooltip",
+            "value": {},
+            "on": [
+                {
+                    "events": "rect:mouseover",
+                    "update": "datum"
+                },
+                {
+                    "events": "rect:mouseout",
+                    "update": "{}"
+                }
+            ]
+        }
+    ],
+    "scales": [
+        {
+            "name": "xscale",
+            "type": "band",
+            "domain": {
+                "data": "samples",
+                "field": "sample"
+            },
+            "range": "width",
+            "padding": 0.05,
+            "round": true
+        },
+        {
+            "name": "yscale",
+            "type": "band",
+            "domain": {
+                "data": "samples",
+                "field": "filepath"
+            },
+            "range": "height"
+        }
+    ],
+    "axes": [
+        {
+            "orient": "bottom",
+            "scale": "xscale"
+        },
+        {
+            "orient": "left",
+            "scale": "yscale"
+        }
+    ],
+    "marks": [
+        {
+            "type": "text",
+            "from": {
+                "data": "diff"
+            },
+            "encode": {
+                "enter": {
+                    "text": {
+                        "field": "text"
+                    },
+                    "align": {
+                        "value": "center"
+                    },
+                    "baseline": {
+                        "value": "alphabetic"
+                    },
+                    "fill": {
+                        "field": "1"
+                    }
+                },
+                "update": {
+                    "fillOpacity": {
+                        "value": 1
+                    }
+                },
+                "hover": {
+                    "fillOpacity": {
+                        "value": 0.5
+                    }
+                }
+            }
+        },
+        {
+            "type": "text",
+            "encode": {
+                "enter": {
+                    "align": {
+                        "value": "center"
+                    },
+                    "baseline": {
+                        "value": "bottom"
+                    },
+                    "fill": {
+                        "value": "#333"
+                    }
+                },
+                "update": {
+                    "x": {
+                        "scale": "xscale",
+                        "signal": "tooltip.category",
+                        "band": 0.5
+                    },
+                    "y": {
+                        "scale": "yscale",
+                        "signal": "tooltip.amount",
+                        "offset": -2
+                    },
+                    "text": {
+                        "signal": "tooltip.amount"
+                    },
+                    "fillOpacity": [
+                        {
+                            "test": "datum === tooltip",
+                            "value": 0
+                        },
+                        {
+                            "value": 1
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}
