@@ -48,7 +48,14 @@ aws lambda in rust ?
 
 web service ?
 
+review codingame ?
+
+any suggestions
+
 note:
 
 - tools: cargo, crates, doc, bench, debug
 - idomatic code
+- schedule:
+  - 12H00-12H30 or 9H30-10H00 ?
+  - only Tuesday or more ?
