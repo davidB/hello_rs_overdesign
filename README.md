@@ -13,6 +13,8 @@ Demonstration of various way to overdesign (to torture) the classic hello world 
   - install extension [Rust (rls)](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust)
   - install extension [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner)
       ```json
+      "code-runner.saveFileBeforeRun": true,
+      "code-runner.saveAllFilesBeforeRun": true,
       "code-runner.executorMap": {
         //...
         // "rust": "cd $dir && rustc $fileName && $dir$fileNameWithoutExt",
@@ -23,14 +25,15 @@ Demonstration of various way to overdesign (to torture) the classic hello world 
 
 ### Run
 
-(shortcut for mac os x)
+(shortcut for mac os x, tips: copy on a paper near computer)
 
 1. closes every openned files
 1. open every files to used for the tuto in order
 1. navigate ⌘ ⌥ ← and ⌘ ⌥ →
 1. toogle Zoom mode ⌘ K, Z
 1. Zoom ⌘ + and ⌘ - and ⌘ 0 to adjust size for auditor
-1. run code Ctrl ⌥ N
+1. clear output (my user shortcut "Ctrl ⌥ C")
+1. run code "Ctrl ⌥ N"
 1. change between code
 
 ## Credits
