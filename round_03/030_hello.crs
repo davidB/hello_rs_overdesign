@@ -1,0 +1,26 @@
+#!/usr/bin/env run-cargo-script
+//! ```cargo
+//! [dependencies]
+//! structopt = "0.2.13"
+//! ```
+extern crate structopt;
+
+use structopt::StructOpt;
+
+#[derive(StructOpt, Debug, Default, Clone)]
+#[structopt(
+  raw(setting = "structopt::clap::AppSettings::ColoredHelp"),
+  author = "davidB"
+)]
+pub struct CmdOpt {
+  // The number of occurences of the `v/verbose` flag
+  /// Verbose mode (-v, -vv (very verbose / level debug), -vvv)
+  /// print on stderr
+  #[structopt(short = "v", long = "verbose", parse(from_occurrences))]
+  pub verbose: usize,
+}
+
+fn main() {
+  let cmd_opt = CmdOpt::from_args();
+  println!("verbose level: {}", cmd_opt.verbose);
+}
