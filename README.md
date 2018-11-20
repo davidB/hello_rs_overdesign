@@ -36,6 +36,29 @@ Demonstration of various way to overdesign (to torture) the classic hello world 
 1. run code "Ctrl ⌥ N"
 1. change between code
 
+## Links
+
+[ctjhoa/rust-learning: A bunch of links to blog posts, articles, videos, etc for learning Rust](https://github.com/ctjhoa/rust-learning)
+
+### Books & Guidelines
+
+- [The Rust Programming Language](https://www.rust-lang.org/en-US/)
+- [The Rust Programming Language - 2018 Edition](https://doc.rust-lang.org/book/2018-edition/index.html)
+- [Rust By Example](https://doc.rust-lang.org/stable/rust-by-example/)
+- [Table of Contents - Rust Cookbook](https://rust-lang-nursery.github.io/rust-cookbook/)
+- [Rust API Guidelines](https://rust-lang-nursery.github.io/api-guidelines/about.html)
+- [Rust Anthology 1](https://brson.github.io/rust-anthology/1/intro.html)
+- [mre/idiomatic-rust: A peer-reviewed collection of articles/talks/repos which teach concise, idiomatic Rust.](https://github.com/mre/idiomatic-rust)
+
+### Tools
+
+- [The Cargo Book](https://doc.rust-lang.org/cargo/getting-started/)
+- [rust-lang-nursery/rust-clippy: A bunch of lints to catch common mistakes and improve your Rust code](https://github.com/rust-lang-nursery/rust-clippy)
+
+### Misc
+
+- [Cargo: packages for Rust](https://crates.io/)
+
 ## Credits
 
 - useb by UI (experimental, wip)
