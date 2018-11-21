@@ -21,20 +21,27 @@ Demonstration of various way to overdesign (to torture) the classic hello world 
         "rust": "cd $dir && cargo script $fileName",
         //...
       },
+      "code-runner.customCommand": "cd $dir && cargo script --test $fileName",
       ```
 
 ### Run
 
 (shortcut for mac os x, tips: copy on a paper near computer)
 
+Preparation:
+
 1. closes every openned files
-1. open every files to used for the tuto in order
-1. navigate ⌘ ⌥ ← and ⌘ ⌥ →
-1. toogle Zoom mode ⌘ K, Z
-1. Zoom ⌘ + and ⌘ - and ⌘ 0 to adjust size for auditor
-1. clear output (my user shortcut "Ctrl ⌥ C")
-1. run code "Ctrl ⌥ N"
-1. change between code
+1. open every files to used for the tuto in order, go to the first one
+1. zoom `⌘ +` and `⌘ -` and `⌘ 0` to adjust size for auditor
+1. 'Toggle Panel Position' to have output/ternimal on Right (on paysage screen)
+1. 'Toggle Zen mode' `⌘ K`, `Z`, or  'Toggle Full Screen' `Ctrl ⌥ N`
+
+Execution:
+
+1. 'Clear Output' `Ctrl ⌥ C`
+1. 'Run Code' `Ctrl ⌥ N` on single file main
+1. 'Run Custom Command' `Ctrl ⌥ K` to run test on single file
+1. navigate `⌘ ⌥ ←` and `⌘ ⌥ →` between openned files
 
 ## Links
 
