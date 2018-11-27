@@ -56,6 +56,7 @@ Execution:
 - [Rust API Guidelines](https://rust-lang-nursery.github.io/api-guidelines/about.html)
 - [Rust Anthology 1](https://brson.github.io/rust-anthology/1/intro.html)
 - [mre/idiomatic-rust: A peer-reviewed collection of articles/talks/repos which teach concise, idiomatic Rust.](https://github.com/mre/idiomatic-rust)
+- [softprops/awesome-mdbook: 🗃️ a card catalog of mdbooks for your reading curiosity](https://github.com/softprops/awesome-mdbook)
 
 ### Tools
 
