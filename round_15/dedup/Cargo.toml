@@ -1,0 +1,23 @@
+[package]
+name = "dedup"
+version = "0.1.0"
+authors = ["David Bernard"]
+edition = "2018"
+
+[dependencies]
+
+[dev-dependencies]
+spectral = "0.6.0"
+criterion = "0.2"
+
+[[bin]]
+name = "dedup"
+path = "src/main.rs"
+
+[[bench]]
+name = "benchmark_fibonacci"
+harness = false
+
+[[bench]]
+name = "benchmark_dedup"
+harness = false
