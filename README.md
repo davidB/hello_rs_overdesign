@@ -9,20 +9,40 @@ Demonstration of various way to overdesign (to torture) the classic hello world 
 - On shell
   - install rust & cargo via [rustup](https://rustup.rs/)
   - install [cargo-script](https://crates.io/crates/cargo-script) in PATH: `cargo install cargo-script`
-- On VS Code
-  - install extension [Rust (rls)](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust)
-  - install extension [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner)
-      ```json
-      "code-runner.saveFileBeforeRun": true,
-      "code-runner.saveAllFilesBeforeRun": true,
-      "code-runner.executorMap": {
-        //...
-        // "rust": "cd $dir && rustc $fileName && $dir$fileNameWithoutExt",
-        "rust": "cd $dir && cargo script $fileName",
-        //...
-      },
-      "code-runner.customCommand": "cd $dir && cargo script --test $fileName",
-      ```
+- On VS Code, install the following extension
+  - Name: Rust (rls)
+    - Id: rust-lang.rust
+    - Description: Rust language support - code completion, Intellisense, refactoring, reformatting, errors, snippets. A client for the Rust Language Server, built by the RLS team.
+    - Version: 0.5.3
+    - Publisher: rust-lang
+    - VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=rust-lang.rust
+  - Name: Code Runner
+    - Id: formulahendry.code-runner
+    - Description: Run C, C++, Java, JS, PHP, Python, Perl, Ruby, Go, Lua, Groovy, PowerShell, CMD, BASH, F#, C#, VBScript, TypeScript, CoffeeScript, Scala, Swift, Julia, Crystal, OCaml, R, AppleScript, Elixir, VB.NET, Clojure, Haxe, Obj-C, Rust, Racket, AutoHotkey, AutoIt, Kotlin, Dart, Pascal, Haskell, Nim, D, Lisp
+    - Version: 0.9.7
+    - Publisher: Jun Han
+    - VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner
+    - Custom Configuration:
+
+        ```json
+        "code-runner.saveFileBeforeRun": true,
+        "code-runner.saveAllFilesBeforeRun": true,
+        "code-runner.executorMap": {
+          //...
+          // "rust": "cd $dir && rustc $fileName && $dir$fileNameWithoutExt",
+          "rust": "cd $dir && cargo script $fileName",
+          //...
+        },
+        "code-runner.customCommand": "cd $dir && cargo script --test $fileName",
+        ```
+
+  - Name: vscode-reveal
+    - Id: evilz.vscode-reveal
+    - Description: Show markdown as revealJs presentation
+    - Version: 3.3.2
+    - Publisher: evilz
+    - VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=evilz.vscode-reveal
+
 
 ### Run
 
@@ -30,18 +50,18 @@ Demonstration of various way to overdesign (to torture) the classic hello world 
 
 Preparation:
 
-1. closes every openned files
-1. open every files to used for the tuto in order, go to the first one
-1. zoom `⌘ +` and `⌘ -` and `⌘ 0` to adjust size for auditor
-1. 'Toggle Panel Position' to have output/ternimal on Right (on paysage screen)
-1. 'Toggle Zen mode' `⌘ K`, `Z`, or  'Toggle Full Screen' `Ctrl ⌥ N`
+1. closes every opened files
+2. open every files to used for the tutorial in order, go to the first one
+3. zoom `⌘ +` and `⌘ -` and `⌘ 0` to adjust size for auditor
+4. 'Toggle Panel Position' to have output/terminal on Right (on landscape screen)
+5. 'Toggle Zen mode' `⌘ K`, `Z`, or  'Toggle Full Screen' `Ctrl ⌥ N`
 
 Execution:
 
 1. 'Clear Output' `Ctrl ⌥ C`
 1. 'Run Code' `Ctrl ⌥ N` on single file main
 1. 'Run Custom Command' `Ctrl ⌥ K` to run test on single file
-1. navigate `⌘ ⌥ ←` and `⌘ ⌥ →` between openned files
+1. navigate `⌘ ⌥ ←` and `⌘ ⌥ →` between opened files
 
 ## Links
 
@@ -66,8 +86,3 @@ Execution:
 ### Misc
 
 - [Cargo: packages for Rust](https://crates.io/)
-
-## Credits
-
-- useb by UI (experimental, wip)
-  - [google/diff-match-patch: Diff Match Patch is a high-performance library in multiple languages that manipulates plain text.](https://github.com/google/diff-match-patch)
