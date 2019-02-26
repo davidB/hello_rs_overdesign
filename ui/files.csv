@@ -1,7 +1,0 @@
-sample,filepath
-hello_00,build.sh
-hello_00,src/main.rs
-hello_00,Cargo.toml
-hello_01,build.sh
-hello_01,src/main.rs
-hello_01,Cargo.toml
